@@ -1,0 +1,7 @@
+Responsabilidad que añade SuscripcionDecorator: Verifica si el Usuario tiene activa la suscripción correspondiente al ServicioStreaming del catálogo envuelto antes de delegar obtenerPeliculas() y devolver las películas.
+
+Por qué CatalogoDecorator usa CatalogoPeliculas: Porque al depender de la interfaz y no de una clase concreta puede envolver CatalogoDisney, CatalogoParamount, CatalogoWarner o incluso encadenar otros decoradores manteniendo el mismo contrato.
+
+Ventaja frente a subclases por combinación: Evita la explosión de clases para cada combinación de servicios activos y permite activar o cancelar suscripciones en tiempo de ejecución sin cambiar ni recrear el objeto catálogo.
+
+Qué cambiarías para una suscripción de paquete: Podrías modelar paquetes (por ejemplo, un enum o conjunto de ServicioStreaming asociados al paquete) y hacer que Usuario.tieneSuscripcion(servicio) valide tanto suscripciones individuales como las incluidas en los paquetes activos del usuario.
