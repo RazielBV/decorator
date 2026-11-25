@@ -4,4 +4,4 @@
 *.ear
 *.nar
 hs_err_pid*
-replay_pid*
+replay_pid**.class
